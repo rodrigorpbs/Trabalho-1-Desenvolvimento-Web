@@ -1,0 +1,36 @@
+ETAPA 2.4 — Quantas colunas aparecem com a janela em ~800px de largura:
+Aparecem aproximadamente 4 colunas.
+ETAPA 2.4 — Quantas colunas aparecem com a janela em ~400px de largura:
+Aparecem aproximadamente 2 colunas.
+ETAPA 2.4 — O que acontece quando não há largura suficiente nem para uma coluna de 160px:
+A coluna ocupa toda a largura disponível para evitar quebra do layout.
+ETAPA 3.4 — justify-items (no container) vs justify-self (no item):
+justify-items define o alinhamento horizontal de todos os itens dentro do container grid.
+
+justify-self define o alinhamento horizontal de apenas um item específico.
+ETAPA 3.4 — align-items vs align-content:
+align-items alinha os itens dentro das células do grid.
+
+align-content alinha o conjunto inteiro das linhas do grid dentro do container.
+ETAPA 4.4 — Por que redefinimos grid-template-areas na media query em vez de apenas grid-template-columns?
+Porque em telas pequenas o layout muda completamente de duas colunas para apenas uma coluna. Apenas alterar as colunas não reorganiza automaticamente as áreas. O grid-template-areas redefine a posição dos elementos para a ordem correta no mobile.
+QUESTÃO 1
+O -1 representa a última linha do grid. Ele é mais robusto porque funciona mesmo se o número de colunas mudar futuramente, evitando ajustes manuais.
+QUESTÃO 2
+auto-fill cria o máximo de colunas possíveis, mesmo deixando espaços vazios.
+
+auto-fit também cria colunas automáticas, mas expande os itens para ocupar espaços vazios.
+
+A diferença aparece quando sobra espaço no container.
+QUESTÃO 3
+O navegador considera a grid inválida quando a área não forma um retângulo perfeito. Nesse caso, o grid-template-areas é ignorado.
+QUESTÃO 4 — Qual é o problema:
+Os nomes usados em grid-area não correspondem aos nomes definidos em grid-template-areas.
+QUESTÃO 4 — Como corrigir o header:
+header {
+    grid-area: cabecalho;
+}
+QUESTÃO 4 — Como corrigir o footer:
+footer {
+    grid-area: rodape;
+}

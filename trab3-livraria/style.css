@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* ETAPA 1 */
+
+.pagina {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "topo topo"
+    "destaque novidades"
+    "categorias categorias"
+    "rodape rodape";
+  min-height: 100vh;
+  gap: 12px;
+  padding: 12px;
+}
+
+.topo {
+  grid-area: topo;
+}
+
+.destaque {
+  grid-area: destaque;
+}
+
+.novidades {
+  grid-area: novidades;
+}
+
+.categorias {
+  grid-area: categorias;
+}
+
+.rodape {
+  grid-area: rodape;
+}
+
+/* CORES */
+
+.topo {
+  background-color: #003366;
+  color: #FFCC00;
+  padding: 20px;
+}
+
+.destaque {
+  background-color: #00509e;
+  color: #fff;
+  padding: 20px;
+}
+
+.novidades {
+  background-color: #1565C0;
+  color: #fff;
+  padding: 20px;
+}
+
+.categorias {
+  background-color: #e8edf2;
+  padding: 20px;
+}
+
+.rodape {
+  background-color: #1A1A2E;
+  color: #ccc;
+  padding: 16px;
+}
+
+/* ETAPA 2 */
+
+.categorias {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  padding: 20px;
+  background-color: #e8edf2;
+}
+
+.card-cat {
+  background-color: #003366;
+  color: #FFCC00;
+  font-weight: bold;
+  text-align: center;
+  padding: 24px 12px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+/* DESAFIO */
+
+.card-cat:first-child {
+  grid-column: span 2;
+}
+
+/* ETAPA 3 */
+
+/* HEADER */
+
+.topo {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  min-height: 100px;
+}
+
+/* FOOTER */
+
+.rodape {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  gap: 10px;
+}
+
+/* DESTAQUE */
+
+.destaque {
+  display: grid;
+  align-items: start;
+  justify-items: center;
+}
+
+.destaque .preco {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FFCC00;
+  margin-top: 12px;
+}
+
+/* ETAPA 4 */
+
+@media (max-width: 600px) {
+
+  .pagina {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "topo"
+      "destaque"
+      "novidades"
+      "categorias"
+      "rodape";
+  }
+
+  .categorias {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .card-cat:first-child {
+    grid-column: span 1;
+  }
+
+}
